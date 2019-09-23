@@ -3,13 +3,21 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+
+// 中文化
 import { ConfigProvider } from 'antd';
 import zhCN from 'antd/es/locale/zh_CN';
 
+// redux
+import { StoreContext } from "redux-react-hook";
+import { store } from "@/redux/store";
+
 ReactDOM.render(
-  <ConfigProvider locale={zhCN}>
-    <App />
-  </ConfigProvider>
+  <StoreContext.Provider value={store}>
+    <ConfigProvider locale={zhCN}>
+      <App />
+    </ConfigProvider>
+  </StoreContext.Provider>
   , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

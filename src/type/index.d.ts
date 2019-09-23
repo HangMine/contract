@@ -1,0 +1,14 @@
+// 普通对象
+interface obj {
+  [any: string]: any
+}
+
+// 接口响应数据
+interface res {
+  data?: any,
+  msg?: string,
+  [key: string]: any
+}
+
+// redux的dispatch函数
+type dispatch = (param: any) => any
